@@ -1,4 +1,5 @@
-(ns clojure-ftbat.chapter-03.exercises)
+(ns clojure-ftbat.chapter-03.exercises
+  (:require clojure-ftbat.chapter-03.symmeterize))
 
 ;; #2
 (defn add-100 [x]

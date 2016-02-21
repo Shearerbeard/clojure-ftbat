@@ -22,13 +22,11 @@
 (defn matching-part
   [part prefixes & [key]]
   (map (fn[pref]
-         (let [ptrn (if key
-                         (re-pattern key)
-                         #"^left-")
-               parts {:name (clojure.string/replace
+         (let [ptrn (if key (re-pattern key) #"^left-")
+               p {:name (clojure.string/replace
                           (:name part) ptrn pref)
                   :size (:size part)}]
-           parts))
+           p))
        prefixes))
 
 (defn symmetrize-body-parts
